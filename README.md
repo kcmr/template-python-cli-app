@@ -9,29 +9,29 @@ You can create your own project based on this template in three ways:
 **Using GitHub CLI (recommended):**
 If you have the GitHub CLI installed, this is the simplest method:
 ```bash
-gh repo create my-new-project --template USER/REPO-TEMPLATE --clone
+gh repo create my-new-project --template kcmr/template-python-cli-app --public --clone
 ```
 
-Replace `USER/REPO-TEMPLATE` with the owner and name of this template repository.
+This will create a public repository. Use `--private` instead of `--public` if you prefer a private repository.
 
 **Using the GitHub UI:**
 1. Click the `Use this template` button at the top of the repository page on GitHub.
 2. Choose the name and visibility for your new repository and click `Create repository from template`.
 
 **Using git:**
-1. Clone this repository (without git history):
-   ```bash
-   git clone --depth=1 https://github.com/USER/REPO-TEMPLATE.git my-new-project
-   cd my-new-project
-   rm -rf .git
-   git init
-   git add .
-   git commit -m "feat: initial commit from template"
-   git remote add origin <your-github-repo-url>
-   git push -u origin main
-   ```
+Clone this repository (without git history):
+```bash
+git clone --depth=1 https://github.com/kcmr/template-python-cli-app.git my-new-project
+cd my-new-project
+rm -rf .git
+git init
+git add .
+git commit -m "feat: initial commit from template"
+git remote add origin <your-github-repo-url>
+git push -u origin main
+```
 
-Replace `USER/REPO-TEMPLATE` with the URL of this template and `<your-github-repo-url>` with your new repository URL.
+Replace `<your-github-repo-url>` with your new repository URL.
 
 ## Setup
 
