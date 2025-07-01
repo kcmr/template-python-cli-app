@@ -14,7 +14,7 @@ lint:
 
 # Auto-fix lint issues
 format:
-	poetry run ruff --fix .
+	poetry run ruff format .
 
 # Run tests using pytest
 test:
