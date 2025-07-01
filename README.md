@@ -50,6 +50,30 @@ poetry install
 pre-commit install
 ```
 
+### Optional: Auto-activate Poetry environment with direnv
+
+For a seamless development experience, you can configure direnv to automatically activate the Poetry virtual environment when entering the project directory.
+
+1. Install direnv:
+```bash
+brew install direnv
+```
+
+2. Add direnv hook to your shell (for zsh):
+```bash
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+For other shells, check the [direnv documentation](https://direnv.net/docs/hook.html).
+
+3. Allow direnv for this project:
+```bash
+direnv allow
+```
+
+Now the Poetry environment will automatically activate when you enter the project directory and deactivate when you leave it.
+
 ## Usage
 
 Run the CLI:
