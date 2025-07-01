@@ -1,0 +1,22 @@
+repos:
+
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.1.0
+    hooks:
+      - id: ruff
+        language_version: python3.9
+        args: [--fix]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.12.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+
+  - repo: local
+    hooks:
+      - id: check-poetry
+        name: Check Poetry
+        entry: poetry check
+        language: system
+        types: [python]
+        pass_filenames: false
