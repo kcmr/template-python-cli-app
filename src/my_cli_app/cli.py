@@ -12,7 +12,7 @@ app = typer.Typer(add_completion=False, help="My CLI App built with Typer.")
 
 def _root_callback() -> None:
     """Entry point when running without subcommands."""
-    typer.echo("Hello, world!")
+    typer.echo("El entorno, melón :)")
 
 
 @app.command()
@@ -28,6 +28,7 @@ app.callback(invoke_without_command=True)(_root_callback)
 def main() -> None:  # pragma: no cover
     """Call [`app`](#app) when module is executed as a script."""
     app()
+
 
 if __name__ == "__main__":  # pragma: no cover
     main()
