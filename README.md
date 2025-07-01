@@ -1,6 +1,37 @@
-# My CLI App
+# Python CLI App template
 
-A Python CLI application built with Poetry, Ruff, and pre-commit.
+A Python CLI application template built with Typer for CLI framework, Poetry for dependency management, Ruff for code formatting and linting, and pre-commit hooks for automated code quality checks.
+
+## Using this repository as a template
+
+You can create your own project based on this template in three ways:
+
+**Using GitHub CLI (recommended):**
+If you have the GitHub CLI installed, this is the simplest method:
+```bash
+gh repo create my-new-project --template USER/REPO-TEMPLATE --clone
+```
+
+Replace `USER/REPO-TEMPLATE` with the owner and name of this template repository.
+
+**Using the GitHub UI:**
+1. Click the `Use this template` button at the top of the repository page on GitHub.
+2. Choose the name and visibility for your new repository and click `Create repository from template`.
+
+**Using git:**
+1. Clone this repository (without git history):
+   ```bash
+   git clone --depth=1 https://github.com/USER/REPO-TEMPLATE.git my-new-project
+   cd my-new-project
+   rm -rf .git
+   git init
+   git add .
+   git commit -m "feat: initial commit from template"
+   git remote add origin <your-github-repo-url>
+   git push -u origin main
+   ```
+
+Replace `USER/REPO-TEMPLATE` with the URL of this template and `<your-github-repo-url>` with your new repository URL.
 
 ## Setup
 
@@ -28,17 +59,56 @@ poetry run cli-app
 
 ## Development
 
-Run tests:
+This project includes a Makefile with convenient targets for common development tasks:
+
 ```bash
+# Format code
+make format
+
+# Run tests
+make test
+
+# Check code style
+make lint
+
+# Run all checks (format, lint, test)
+make check
+```
+
+You can also run these commands directly with Poetry:
+
+```bash
+# Run tests
 poetry run pytest
-```
 
-Check code style:
-```bash
+# Check code style
 poetry run ruff .
-```
 
-Run pre-commit hooks:
-```bash
+# Run pre-commit hooks
 pre-commit run --all-files
 ```
+
+---
+
+## VSCode: recommended settings
+
+If you use VSCode, you can add these settings to your local `.vscode/settings.json` to improve the Python development experience:
+
+```json
+{
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "makefile.configureOnOpen": false
+}
+```
+
