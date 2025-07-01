@@ -50,7 +50,8 @@ docs/_build/
 *.spec
 
 # IDEs and editors
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 .idea/
 *.sublime-project
 *.sublime-workspace
